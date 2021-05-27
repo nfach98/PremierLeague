@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_premier_head_24dp"
+        android:title="@string/pl" />
+
+    <item
+        android:id="@+id/navigation_matchday"
+        android:icon="@drawable/ic_ball_black_24dp"
+        android:title="@string/matchday" />
+
+    <item
+        android:id="@+id/navigation_table"
+        android:icon="@drawable/ic_premier_trophy_24dp"
+        android:title="@string/table" />
+
+    <item
+        android:id="@+id/navigation_favorite"
+        android:icon="@drawable/ic_fans_24dp"
+        android:title="@string/favorite" />
+
+</menu>

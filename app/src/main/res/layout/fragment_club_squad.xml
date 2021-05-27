@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".ui.detail.club.ClubSquadFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/players"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_players"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_player"
+            app:layout_constraintBottom_toTopOf="@id/tv_manager"/>
+
+        <TextView
+            android:id="@+id/tv_manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/manager"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintTop_toBottomOf="@id/rv_players"/>
+
+        <ImageView
+            android:id="@+id/iv_manager"
+            android:layout_width="60dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintDimensionRatio="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_manager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_premier_head_24dp"/>
+
+        <TextView
+            android:id="@+id/tv_name_manager"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"
+            android:gravity="start|center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toEndOf="@id/iv_manager"
+            app:layout_constraintTop_toTopOf="@id/iv_manager"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Premier League"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

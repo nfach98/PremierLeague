@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@id/iv_player"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_player"
+                motion:framePosition="70"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_player"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/iv_flag"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_flag"
+                motion:framePosition="70"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_flag"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/tv_number"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_number"
+                motion:framePosition="70"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_number"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/tv_position"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_position"
+                motion:framePosition="70"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_position"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/iv_background_collapsed"
+                motion:framePosition="0"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_background_collapsed"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_background_collapsed"
+                motion:framePosition="100"
+                android:alpha="1" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/view"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/view"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/view"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/tv_team"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_team"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/tv_team"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/iv_team"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_team"
+                motion:framePosition="50"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/iv_team"
+                motion:framePosition="100"
+                android:alpha="0" />
+
+            <KeyAttribute
+                motion:motionTarget="@id/fab_favorite"
+                motion:framePosition="0"
+                android:alpha="1" />
+            <KeyAttribute
+                motion:motionTarget="@id/fab_favorite"
+                motion:framePosition="5"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@id/fab_favorite"
+                motion:framePosition="100"
+                android:alpha="0" />
+        </KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/scroll_view" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/scroll_view" />
+        <Constraint
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@id/scroll_view" />
+        <Constraint
+            android:id="@+id/iv_player"
+            android:elevation="0dp"
+            motion:layout_constraintWidth_percent="0.35"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.0"
+            motion:layout_constraintStart_toStartOf="@id/iv_background"
+            motion:layout_constraintTop_toBottomOf="@id/home_no_bg"
+            android:layout_marginTop="4dp" />
+        <Constraint
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@id/tv_number"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintEnd_toStartOf="@id/fab_favorite"
+            motion:layout_constraintStart_toEndOf="@id/iv_player"
+            android:layout_marginStart="8dp" />
+        <Constraint
+            android:id="@+id/scroll_view"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/iv_player"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/iv_team"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.0"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_name"
+            motion:layout_constraintStart_toStartOf="@id/tv_name" />
+        <Constraint
+            android:id="@+id/tv_team"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="4dp"
+            motion:layout_constraintStart_toEndOf="@id/iv_team"
+            motion:layout_constraintTop_toBottomOf="@id/tv_name"
+            motion:layout_constraintTop_toTopOf="@id/iv_team"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_team" />
+        <Constraint
+            android:id="@+id/home_no_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/iv_background_collapsed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_background"
+            motion:layout_constraintTop_toTopOf="@id/iv_background" />
+        <Constraint
+            android:id="@+id/fab_favorite"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            motion:layout_constraintTop_toTopOf="@id/iv_player" />
+        <Constraint
+            android:id="@+id/iv_flag"
+            android:layout_width="32dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.3"
+            motion:layout_constraintStart_toStartOf="@id/iv_player"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_player"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp" />
+        <Constraint
+            android:id="@+id/tv_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@id/iv_player"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintEnd_toStartOf="@id/fab_favorite"
+            motion:layout_constraintStart_toStartOf="@id/tv_name" />
+        <Constraint
+            android:id="@+id/tv_position"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintStart_toStartOf="@id/tv_name"
+            motion:layout_constraintTop_toBottomOf="@id/tv_team" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/scroll_view" />
+        <Constraint
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:gravity="start"
+            motion:layout_constraintStart_toEndOf="@id/home_no_bg"
+            motion:layout_constraintTop_toTopOf="@id/home_no_bg"
+            motion:layout_constraintBottom_toBottomOf="@id/home_no_bg"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp" />
+        <Constraint
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="@id/iv_background"
+            motion:layout_constraintBottom_toTopOf="@id/scroll_view" />
+        <Constraint
+            android:id="@+id/scroll_view"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/home_no_bg"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+        <Constraint
+            android:id="@+id/iv_player"
+            android:elevation="0dp"
+            motion:layout_constraintWidth_percent="0.35"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.0"
+            motion:layout_constraintStart_toStartOf="@id/iv_background"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_background" />
+        <Constraint
+            android:id="@+id/iv_team"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.0"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_name"
+            motion:layout_constraintStart_toStartOf="@id/tv_name" />
+        <Constraint
+            android:id="@+id/tv_team"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginStart="4dp"
+            motion:layout_constraintStart_toEndOf="@id/iv_team"
+            motion:layout_constraintTop_toBottomOf="@id/tv_name"
+            motion:layout_constraintTop_toTopOf="@id/iv_team"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_team" />
+        <Constraint
+            android:id="@+id/home_no_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp" />
+        <Constraint
+            android:id="@+id/iv_background_collapsed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_background"
+            motion:layout_constraintTop_toTopOf="@id/iv_background" />
+        <Constraint
+            android:id="@+id/fab_favorite"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@id/tv_name" />
+        <Constraint
+            android:id="@+id/iv_flag"
+            android:layout_width="32dp"
+            android:layout_height="0dp"
+            motion:layout_constraintDimensionRatio="1.3"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="@id/iv_background"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp" />
+        <Constraint
+            android:id="@+id/tv_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@id/iv_player"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintEnd_toStartOf="@id/fab_favorite"
+            motion:layout_constraintStart_toStartOf="@id/tv_name" />
+        <Constraint
+            android:id="@+id/tv_position"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            motion:layout_constraintStart_toStartOf="@id/tv_name"
+            motion:layout_constraintTop_toBottomOf="@id/tv_team" />
+    </ConstraintSet>
+</MotionScene>

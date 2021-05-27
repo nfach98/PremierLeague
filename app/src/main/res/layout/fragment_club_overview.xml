@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple_dark"
+    tools:context=".ui.detail.club.ClubOverviewFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:src="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/informations"/>
+
+        <TextView
+            android:id="@+id/tv_visit_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Visit Manchester City"/>
+
+        <Button
+            android:id="@+id/btn_website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@drawable/bg_rectangle"
+            android:text="@string/official_website"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_visit_team"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_facebook"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginHorizontal="8dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_icons8_facebook_f"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="#1474EA"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_website"
+            app:layout_constraintEnd_toStartOf="@id/btn_twitter"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_twitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:padding="12dp"
+            android:tint="@color/white"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="#28AEFF"
+            android:src="@drawable/ic_icons8_twitter"
+            android:visibility="gone"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1.0"
+            app:layout_constraintStart_toEndOf="@id/btn_facebook"
+            app:layout_constraintTop_toTopOf="@id/btn_facebook"
+            app:layout_constraintEnd_toStartOf="@id/btn_youtube"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_youtube"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:padding="12dp"
+            android:tint="@color/white"
+            android:background="@drawable/bg_circle"
+            android:backgroundTint="#FF0000"
+            android:src="@drawable/ic_icons8_youtube"
+            android:visibility="gone"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1.0"
+            app:layout_constraintStart_toEndOf="@id/btn_twitter"
+            app:layout_constraintTop_toTopOf="@id/btn_twitter"
+            app:layout_constraintEnd_toStartOf="@id/btn_instagram"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/btn_instagram"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="8dp"
+            android:padding="12dp"
+            android:tint="@color/white"
+            android:background="@drawable/bg_instagram"
+            android:src="@drawable/ic_icons8_instagram"
+            android:visibility="gone"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintDimensionRatio="1.0"
+            app:layout_constraintStart_toEndOf="@id/btn_youtube"
+            app:layout_constraintTop_toTopOf="@id/btn_youtube"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_facebook"
+            tools:text="Lorem ipsum"/>
+
+        <TextView
+            android:id="@+id/informations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/informations"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="32dp"
+            android:src="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/informations"
+            app:layout_constraintBottom_toTopOf="@id/club_kits"/>
+
+        <TextView
+            android:id="@+id/nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/nickname"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/informations"/>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="end|center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/nickname"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/formed_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/formed_year"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nickname"/>
+
+        <TextView
+            android:id="@+id/tv_formed_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="end|center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/formed_year"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/stadium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/stadium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_formed_year" />
+
+        <TextView
+            android:id="@+id/tv_stadium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="end|center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/stadium"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_stadium"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="end|center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/location"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/capacity"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_location"/>
+
+        <TextView
+            android:id="@+id/tv_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="end|center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/capacity"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/club_kits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/club_kits"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/capacity"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_kits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/club_kits"/>
+
+        <TextView
+            android:id="@+id/competitions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="12dp"
+            android:text="@string/competitions"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_kits"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:src="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/competitions"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_league"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/competitions"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league2"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league3"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league4"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league5"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="@string/nickname"/>
+
+        <TextView
+            android:id="@+id/tv_league7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginHorizontal="12dp"
+            android:gravity="start"
+            android:textColor="@color/purple_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_league6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/nickname"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

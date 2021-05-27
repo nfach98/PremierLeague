@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Premier League</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="pl">PL</string>
+    <string name="matchday">Matchday</string>
+    <string name="table">Table</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="clubs">Clubs</string>
+    <string name="players">Players</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="matchweek">Matchweek</string>
+    <string name="league_table">League Table</string>
+    <string name="pos">Pos</string>
+    <string name="club">Club</string>
+    <string name="p">P</string>
+    <string name="gd">GD</string>
+    <string name="pts">Pts</string>
+
+    <string name="overview">Overview</string>
+    <string name="squad">Squad</string>
+    <string name="official_website">Official Website</string>
+    <string name="club_kits">Club Kits</string>
+    <string name="competitions">Competitions</string>
+    <string name="informations">Informations</string>
+    <string name="stadium">Stadium</string>
+    <string name="location">Location</string>
+    <string name="formed_year">Formed Year</string>
+    <string name="capacity">Capacity</string>
+    <string name="nickname">Nickname</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="location_of_birth">Location of Birth</string>
+    <string name="age">Age</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="nationality">Nationality</string>
+    <string name="manager">Manager</string>
+</resources>
