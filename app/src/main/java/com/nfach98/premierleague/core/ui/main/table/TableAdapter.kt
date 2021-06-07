@@ -1,8 +1,10 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.main.table
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.nfach98.premierleague.R
 import com.nfach98.premierleague.core.domain.model.Table
@@ -36,17 +38,27 @@ class TableAdapter : RecyclerView.Adapter<TableAdapter.ListViewHolder>() {
         private val binding = ItemTableLookupBinding.bind(itemView)
         fun bind(data: Table) {
             with(binding) {
-                Picasso.get().load("${data.teamBadge}/tiny").into(binding.ivTeam)
+                Picasso.get().load(data.strTeamBadge).into(binding.ivTeam)
                 tvPos.text = (listData.indexOf(data) + 1).toString()
-                tvTeam.text = data.name
-                tvPlay.text = data.played.toString()
-                tvWin.text = data.win.toString()
-                tvDraw.text = data.draw.toString()
-                tvLoss.text = data.loss.toString()
-                tvGd.text =
-                    if(data.goalsdifference > 0) "+${data.goalsdifference}"
-                    else data.goalsdifference.toString()
-                tvPoint.text = data.total.toString()
+                tvTeam.text = data.strTeam
+                tvPlay.text = data.intPlayed
+                tvWin.text = data.intWin
+                tvDraw.text = data.intDraw
+                tvLoss.text = data.intLoss
+                tvGd.text = data.intGoalDifference
+                tvPoint.text = data.intPoints
+
+                when {
+                    data.strDescription?.contains(Regex("Champions League")) == true -> {
+                        bar.setBackgroundColor(Color.parseColor("#010A85"))
+                    }
+                    data.strDescription?.contains(Regex("Europa League")) == true -> {
+                        bar.setBackgroundColor(Color.parseColor("#F16B07"))
+                    }
+                    data.strDescription?.contains(Regex("Europa Conference League")) == true -> {
+                        bar.setBackgroundColor(Color.parseColor("#00BF0C"))
+                    }
+                }
             }
         }
 

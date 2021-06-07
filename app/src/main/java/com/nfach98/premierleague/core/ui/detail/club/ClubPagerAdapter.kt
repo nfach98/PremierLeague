@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.detail.club
 
 import android.content.Context
 import androidx.annotation.StringRes
@@ -9,7 +9,7 @@ import com.nfach98.premierleague.R
 import com.nfach98.premierleague.ui.detail.club.ClubOverviewFragment
 import com.nfach98.premierleague.ui.detail.club.ClubSquadFragment
 
-class TeamPagerAdapter (
+class ClubPagerAdapter (
     private val context: Context,
     private val id: String?,
     fm: FragmentManager

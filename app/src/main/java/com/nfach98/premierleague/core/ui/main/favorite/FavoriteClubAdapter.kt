@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.main.favorite
 
 import android.view.LayoutInflater
 import android.view.View

@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.detail.club
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +10,7 @@ import com.nfach98.premierleague.databinding.ItemEquipmentBinding
 import com.squareup.picasso.Picasso
 import java.util.*
 
-class TeamEquipmentAdapter : RecyclerView.Adapter<TeamEquipmentAdapter.ListViewHolder>() {
+class ClubEquipmentAdapter : RecyclerView.Adapter<ClubEquipmentAdapter.ListViewHolder>() {
 
     private var listData = ArrayList<Equipment>()
     var onItemClick: ((Equipment) -> Unit)? = null

@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.main.favorite
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nfach98.premierleague.R
 import com.nfach98.premierleague.core.domain.model.Player
-import com.nfach98.premierleague.databinding.ItemPlayerClubBinding
+import com.nfach98.premierleague.databinding.ItemPlayerFavoriteBinding
 import com.squareup.picasso.Picasso
 import java.util.*
 
-class TeamSquadAdapter : RecyclerView.Adapter<TeamSquadAdapter.ListViewHolder>() {
+class FavoritePlayerAdapter : RecyclerView.Adapter<FavoritePlayerAdapter.ListViewHolder>() {
 
     private var listData = ArrayList<Player>()
     var onItemClick: ((Player) -> Unit)? = null
@@ -23,7 +23,7 @@ class TeamSquadAdapter : RecyclerView.Adapter<TeamSquadAdapter.ListViewHolder>()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_player_club, parent, false))
+        ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_player_favorite, parent, false))
 
     override fun getItemCount() = listData.size
 
@@ -33,7 +33,7 @@ class TeamSquadAdapter : RecyclerView.Adapter<TeamSquadAdapter.ListViewHolder>()
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = ItemPlayerClubBinding.bind(itemView)
+        private val binding = ItemPlayerFavoriteBinding.bind(itemView)
         fun bind(data: Player) {
             with(binding) {
                 Picasso.get()
@@ -41,8 +41,10 @@ class TeamSquadAdapter : RecyclerView.Adapter<TeamSquadAdapter.ListViewHolder>()
                     .placeholder(R.drawable.placeholder_player)
                     .error(R.drawable.placeholder_player)
                     .into(binding.ivPlayer)
+
+                Picasso.get().load("${data.strTeamBadge}/tiny").into(binding.ivTeam)
                 tvName.text = data.strPlayer
-                tvNumber.text = data.strNumber
+                tvTeam.text = data.strTeam
             }
         }
 

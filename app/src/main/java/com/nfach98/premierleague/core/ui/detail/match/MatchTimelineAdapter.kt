@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.detail.match
 
 import android.content.Context
 import android.view.LayoutInflater

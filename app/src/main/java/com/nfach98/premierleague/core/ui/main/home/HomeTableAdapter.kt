@@ -1,4 +1,4 @@
-package com.nfach98.premierleague.core.ui
+package com.nfach98.premierleague.core.ui.main.home
 
 import android.view.LayoutInflater
 import android.view.View
@@ -36,14 +36,12 @@ class HomeTableAdapter : RecyclerView.Adapter<HomeTableAdapter.ListViewHolder>()
         private val binding = ItemTableHomeBinding.bind(itemView)
         fun bind(data: Table) {
             with(binding) {
-                Picasso.get().load("${data.teamBadge}/tiny").into(binding.ivTeam)
+                Picasso.get().load(data.strTeamBadge).into(binding.ivTeam)
                 tvPos.text = (listData.indexOf(data) + 1).toString()
-                tvTeam.text = data.name
-                tvPlay.text = data.played.toString()
-                tvGd.text =
-                    if(data.goalsdifference > 0) "+${data.goalsdifference}"
-                    else data.goalsdifference.toString()
-                tvPoint.text = data.total.toString()
+                tvTeam.text = data.strTeam
+                tvPlay.text = data.intPlayed
+                tvGd.text = data.intGoalDifference
+                tvPoint.text = data.intPoints
             }
         }
 
