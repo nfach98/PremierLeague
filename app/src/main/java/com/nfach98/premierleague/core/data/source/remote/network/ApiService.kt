@@ -22,7 +22,7 @@ interface ApiService {
     @GET("eventsround.php?id=${BuildConfig.LEAGUE_ID}&s=${BuildConfig.SEASON_ID}")
     fun getMatchweek(@Query("r") week: String): Flowable<ListMatchResponse>
 
-    @GET("lookup_all_teams.php?id=${BuildConfig.LEAGUE_ID}")
+    @GET("search_all_teams.php?s=Soccer&c=England")
     fun getAllClubs(): Flowable<ListClubResponse>
 
     @GET("lookupteam.php")
