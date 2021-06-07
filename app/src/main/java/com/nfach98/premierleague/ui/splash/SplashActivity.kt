@@ -24,25 +24,23 @@ class SplashActivity : AppCompatActivity() {
         _binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.decorView.systemUiVisibility = SYSTEM_UI_FLAG_FULLSCREEN and SYSTEM_UI_FLAG_HIDE_NAVIGATION
-
         splashViewModel.colors.observe(this, { colors ->
             binding.layoutSplash.setBackgroundColor(colors[Random.nextInt(0, colors.size)])
+        })
 
-            splashViewModel.clubs.observe(this, { teams ->
-                if(teams != null){
-                    when (teams) {
-                        is Resource.Success -> {
-                            DataClubs.listClub = teams.data
-                            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                            finish()
-                        }
-                        else -> {
+        splashViewModel.clubs.observe(this, { teams ->
+            if(teams != null){
+                when (teams) {
+                    is Resource.Success -> {
+                        DataClubs.listClub = teams.data
+                        startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                        finish()
+                    }
+                    else -> {
 
-                        }
                     }
                 }
-            })
+            }
         })
     }
 }
