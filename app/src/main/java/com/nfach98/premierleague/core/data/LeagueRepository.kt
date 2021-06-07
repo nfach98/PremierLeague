@@ -1,5 +1,6 @@
 package com.nfach98.premierleague.core.data
 
+import android.util.Log
 import com.nfach98.premierleague.core.data.source.local.LocalDataSource
 import com.nfach98.premierleague.core.data.source.remote.RemoteDataSource
 import com.nfach98.premierleague.core.data.source.remote.network.ApiResponse
@@ -31,8 +32,8 @@ class LeagueRepository constructor(
                 remoteDataSource.getAllTable()
 
             override fun saveCallResult(data: List<TableResponse>) {
-                val tourismList = DataMapper.mapTableResponsesToEntities(data)
-                localDataSource.insertTable(tourismList)
+                val tableList = DataMapper.mapTableResponsesToEntities(data)
+                localDataSource.insertTable(tableList)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
@@ -52,8 +53,8 @@ class LeagueRepository constructor(
                 remoteDataSource.getAllMatches()
 
             override fun saveCallResult(data: List<MatchResponse>) {
-                val tourismList = DataMapper.mapMatchResponsesToEntities(data)
-                localDataSource.insertMatch(tourismList)
+                val matchList = DataMapper.mapMatchResponsesToEntities(data)
+                localDataSource.insertMatch(matchList)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
@@ -136,8 +137,8 @@ class LeagueRepository constructor(
                 remoteDataSource.getAllClubs()
 
             override fun saveCallResult(data: List<ClubResponse>) {
-                val teamList = DataMapper.mapClubResponsesToEntities(data)
-                localDataSource.insertTeam(teamList)
+                val clubList = DataMapper.mapClubResponsesToEntities(data)
+                localDataSource.insertTeam(clubList)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
@@ -163,8 +164,8 @@ class LeagueRepository constructor(
                 remoteDataSource.getClub(id)
 
             override fun saveCallResult(data: List<ClubResponse>) {
-                val teamList = DataMapper.mapClubResponsesToEntities(data)
-                localDataSource.insertTeam(teamList)
+                val clubList = DataMapper.mapClubResponsesToEntities(data)
+                localDataSource.insertTeam(clubList)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe()
