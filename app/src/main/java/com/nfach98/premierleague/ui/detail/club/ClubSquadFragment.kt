@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nfach98.premierleague.R
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.domain.model.Player
-import com.nfach98.premierleague.core.ui.TeamSquadAdapter
+import com.nfach98.premierleague.core.ui.detail.club.ClubSquadAdapter
 import com.nfach98.premierleague.databinding.FragmentClubSquadBinding
 import com.nfach98.premierleague.ui.detail.player.PlayerActivity
 import com.squareup.picasso.Picasso
@@ -31,7 +30,7 @@ class ClubSquadFragment(private val id: String?) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null && id != null) {
-            val squadAdapter = TeamSquadAdapter()
+            val squadAdapter = ClubSquadAdapter()
 
             squadAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, PlayerActivity::class.java)

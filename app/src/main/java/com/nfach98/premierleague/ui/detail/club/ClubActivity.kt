@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.nfach98.premierleague.R
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.TeamPagerAdapter
+import com.nfach98.premierleague.core.ui.detail.club.ClubPagerAdapter
 import com.nfach98.premierleague.databinding.ActivityClubBinding
 import com.squareup.picasso.Picasso
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -32,7 +32,7 @@ class ClubActivity : AppCompatActivity() {
 
         val id = intent.getStringExtra(EXTRA_ID)
 
-        val teamPagerAdapter = TeamPagerAdapter(
+        val teamPagerAdapter = ClubPagerAdapter(
             this@ClubActivity,
             id,
             supportFragmentManager
@@ -41,7 +41,7 @@ class ClubActivity : AppCompatActivity() {
         binding.teamTabs.setupWithViewPager(binding.teamViewPager)
 
         if (id != null) {
-            clubViewModel.getTeam(id).observe(this, { team ->
+            clubViewModel.getClub(id).observe(this, { team ->
                 if(team != null){
                     when(team){
                         is Resource.Success -> {

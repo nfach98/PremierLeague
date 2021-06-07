@@ -11,7 +11,7 @@ import com.nfach98.premierleague.core.domain.usecase.LeagueUseCase
 import com.nfach98.premierleague.core.utils.DataClubs
 
 class ClubViewModel constructor(private val leagueUseCase: LeagueUseCase) : ViewModel() {
-    fun getTeam(id: String) : LiveData<Resource<List<Club>>> {
+    fun getClub(id: String) : LiveData<Resource<List<Club>>> {
         return LiveDataReactiveStreams.fromPublisher(leagueUseCase.getClub(id))
     }
 

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nfach98.premierleague.BuildConfig
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.TeamEquipmentAdapter
+import com.nfach98.premierleague.core.ui.detail.club.ClubEquipmentAdapter
 import com.nfach98.premierleague.databinding.FragmentClubOverviewBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -35,9 +35,9 @@ class ClubOverviewFragment(private val id: String?) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null && id != null) {
-            val equipmentAdapter = TeamEquipmentAdapter()
+            val equipmentAdapter = ClubEquipmentAdapter()
 
-            clubViewModel.getTeam(id).observe(viewLifecycleOwner, { team ->
+            clubViewModel.getClub(id).observe(viewLifecycleOwner, { team ->
                 if (team != null) {
                     when (team) {
                         is Resource.Success -> {
