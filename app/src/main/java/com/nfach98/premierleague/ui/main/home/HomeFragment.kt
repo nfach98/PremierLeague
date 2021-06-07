@@ -7,14 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nfach98.premierleague.BuildConfig
+import com.nfach98.premierleague.R
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.MatchAdapter
-import com.nfach98.premierleague.core.ui.HomeTableAdapter
-import com.nfach98.premierleague.core.utils.DataClubs
+import com.nfach98.premierleague.core.ui.main.matchday.MatchAdapter
+import com.nfach98.premierleague.core.ui.main.home.HomeTableAdapter
 import com.nfach98.premierleague.databinding.FragmentHomeBinding
 import com.nfach98.premierleague.ui.detail.club.ClubActivity
 import com.nfach98.premierleague.ui.detail.match.MatchActivity
+import com.nfach98.premierleague.ui.detail.player.PlayerActivity
+import com.squareup.picasso.Picasso
 import org.koin.android.viewmodel.ext.android.viewModel
+import kotlin.random.Random
 
 class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModel()
@@ -42,7 +46,7 @@ class HomeFragment : Fragment() {
 
             tableAdapter.onItemClick = { selectedData ->
                 val intent = Intent(activity, ClubActivity::class.java)
-                intent.putExtra(ClubActivity.EXTRA_ID, selectedData.teamid)
+                intent.putExtra(ClubActivity.EXTRA_ID, selectedData.idTeam)
                 startActivity(intent)
             }
 
@@ -93,10 +97,10 @@ class HomeFragment : Fragment() {
                     when (table) {
 //                        is Resource.Loading -> binding.loading.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            table.data?.map {
-                                val team = DataClubs.listClub?.filter { t -> t.idTeam == it.teamid }
-                                it.teamBadge = team?.get(0)?.strTeamBadge
-                            }
+//                            table.data?.map {
+//                                val team = DataClubs.listClub?.filter { t -> t.idTeam == it.teamid }
+//                                it.teamBadge = team?.get(0)?.strTeamBadge
+//                            }
 
                             binding.loading.visibility = View.GONE
                             binding.gradientTable.visibility = View.VISIBLE
@@ -128,6 +132,54 @@ class HomeFragment : Fragment() {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = tableAdapter
+            }
+
+            //player
+            val clubs = homeViewModel.clubs?.filter { c -> c.idLeague == BuildConfig.LEAGUE_ID }
+            val club = clubs?.get(Random.nextInt(clubs.size))
+            club?.idTeam?.let {
+                homeViewModel.getSquad(it).observe(viewLifecycleOwner, { squad ->
+                    if (squad != null) {
+                        when (squad) {
+                            is Resource.Success -> {
+                                val player = squad.data?.filter { p ->
+                                    p.strPosition != "Manager"
+                                }?.get(Random.nextInt(squad.data.size))
+
+                                binding.loading.visibility = View.GONE
+                                binding.gradientPlayer.visibility = View.VISIBLE
+                                binding.titlePlayer.visibility = View.VISIBLE
+                                binding.layoutPlayer.visibility = View.VISIBLE
+
+                                binding.tvNamePlayer.text = player?.strPlayer
+                                binding.tvTeamPlayer.text = player?.strTeam
+                                binding.tvPositionPlayer.text = player?.strPosition
+
+                                Picasso.get()
+                                    .load("${club.strTeamBadge}/tiny")
+                                    .into(binding.ivTeamPlayer)
+
+                                Picasso.get()
+                                    .load("${player?.strCutout}/preview")
+                                    .placeholder(R.drawable.placeholder_player)
+                                    .error(R.drawable.placeholder_player)
+                                    .into(binding.ivPlayer)
+
+                                binding.layoutPlayer.setOnClickListener {
+                                    val intent = Intent(activity, PlayerActivity::class.java)
+                                    intent.putExtra(PlayerActivity.EXTRA_ID, player?.idPlayer)
+                                    startActivity(intent)
+                                }
+                            }
+                            else -> {
+                                binding.loading.visibility = View.VISIBLE
+                                binding.gradientPlayer.visibility = View.GONE
+                                binding.titlePlayer.visibility = View.GONE
+                                binding.layoutPlayer.visibility = View.GONE
+                            }
+                        }
+                    }
+                })
             }
         }
     }
