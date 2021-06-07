@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.TableAdapter
+import com.nfach98.premierleague.core.ui.main.table.TableAdapter
 import com.nfach98.premierleague.databinding.FragmentTableBinding
 import com.nfach98.premierleague.ui.detail.club.ClubActivity
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -33,7 +33,7 @@ class TableFragment : Fragment() {
             val tableAdapter = TableAdapter()
             tableAdapter.onItemClick = { team ->
                 val intent = Intent(activity, ClubActivity::class.java)
-                intent.putExtra(ClubActivity.EXTRA_ID, team.teamid)
+                intent.putExtra(ClubActivity.EXTRA_ID, team.idTeam)
                 startActivity(intent)
             }
 
@@ -42,10 +42,6 @@ class TableFragment : Fragment() {
                     when (table) {
 //                        is Resource.Loading -> binding.loading.visibility = View.VISIBLE
                         is Resource.Success -> {
-                            table.data?.map {
-                                val club = tableViewModel.clubs?.filter { t -> t.idTeam == it.teamid }
-                                it.teamBadge = club?.get(0)?.strTeamBadge
-                            }
                             binding.loading.visibility = View.GONE
                             tableAdapter.setData(table.data)
                         }
