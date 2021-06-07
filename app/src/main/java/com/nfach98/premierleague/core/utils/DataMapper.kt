@@ -10,16 +10,25 @@ object DataMapper {
         val tableList = ArrayList<TableEntity>()
         input.map {
             val table = TableEntity(
-                draw = it.draw,
-                goalsagainst = it.goalsagainst,
-                goalsdifference = it.goalsdifference,
-                goalsfor = it.goalsfor,
-                loss = it.loss,
-                name = it.name,
-                played = it.played,
-                teamid = it.teamid,
-                total = it.total,
-                win = it.win
+                idStanding = it.idStanding,
+                intRank = it.intRank,
+                idTeam = it.idTeam,
+                strTeam = it.strTeam,
+                strTeamBadge = it.strTeamBadge,
+                idLeague = it.idLeague,
+                strLeague = it.strLeague,
+                strSeason = it.strSeason,
+                strForm = it.strForm,
+                strDescription = it.strDescription,
+                intPlayed = it.intPlayed,
+                intWin = it.intWin,
+                intLoss = it.intLoss,
+                intDraw = it.intDraw,
+                intGoalsFor = it.intGoalsFor,
+                intGoalsAgainst = it.intGoalsAgainst,
+                intGoalDifference = it.intGoalDifference,
+                intPoints = it.intPoints,
+                dateUpdated = it.dateUpdated
             )
             tableList.add(table)
         }
@@ -29,16 +38,25 @@ object DataMapper {
     fun mapTableEntitiesToDomain(input: List<TableEntity>): List<Table> =
         input.map {
             Table(
-                draw = it.draw,
-                goalsagainst = it.goalsagainst,
-                goalsdifference = it.goalsdifference,
-                goalsfor = it.goalsfor,
-                loss = it.loss,
-                name = it.name,
-                played = it.played,
-                teamid = it.teamid,
-                total = it.total,
-                win = it.win,
+                idStanding = it.idStanding,
+                intRank = it.intRank,
+                idTeam = it.idTeam,
+                strTeam = it.strTeam,
+                strTeamBadge = it.strTeamBadge,
+                idLeague = it.idLeague,
+                strLeague = it.strLeague,
+                strSeason = it.strSeason,
+                strForm = it.strForm,
+                strDescription = it.strDescription,
+                intPlayed = it.intPlayed,
+                intWin = it.intWin,
+                intLoss = it.intLoss,
+                intDraw = it.intDraw,
+                intGoalsFor = it.intGoalsFor,
+                intGoalsAgainst = it.intGoalsAgainst,
+                intGoalDifference = it.intGoalDifference,
+                intPoints = it.intPoints,
+                dateUpdated = it.dateUpdated
             )
         }
 
