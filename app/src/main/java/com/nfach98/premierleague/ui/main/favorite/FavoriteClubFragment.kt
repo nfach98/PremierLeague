@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.nfach98.premierleague.core.ui.FavoriteClubAdapter
+import com.nfach98.premierleague.core.ui.main.favorite.FavoriteClubAdapter
 import com.nfach98.premierleague.databinding.FragmentFavoriteClubBinding
 import com.nfach98.premierleague.ui.detail.club.ClubActivity
 import org.koin.android.viewmodel.ext.android.viewModel

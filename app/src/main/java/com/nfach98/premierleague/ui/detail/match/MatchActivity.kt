@@ -1,12 +1,10 @@
 package com.nfach98.premierleague.ui.detail.match
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.HomeTableAdapter
-import com.nfach98.premierleague.core.ui.MatchTimelineAdapter
+import com.nfach98.premierleague.core.ui.detail.match.MatchTimelineAdapter
 import com.nfach98.premierleague.databinding.ActivityMatchBinding
 import com.squareup.picasso.Picasso
 import org.koin.android.viewmodel.ext.android.viewModel

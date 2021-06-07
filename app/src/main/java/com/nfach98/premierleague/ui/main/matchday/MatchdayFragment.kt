@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nfach98.premierleague.core.data.Resource
-import com.nfach98.premierleague.core.ui.MatchAdapter
+import com.nfach98.premierleague.core.ui.main.matchday.MatchAdapter
 import com.nfach98.premierleague.databinding.FragmentMatchdayBinding
 import com.nfach98.premierleague.ui.detail.match.MatchActivity
 import org.koin.android.viewmodel.ext.android.viewModel

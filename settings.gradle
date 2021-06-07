@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name = "Premier League"
+include ':favorite'
+include ':core'

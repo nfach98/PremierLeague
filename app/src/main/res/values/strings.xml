@@ -40,4 +40,6 @@
     <string name="weight">Weight</string>
     <string name="nationality">Nationality</string>
     <string name="manager">Manager</string>
+    <string name="featured_player">Featured Player</string>
+    <string name="title_favorite">Favorite</string>
 </resources>
